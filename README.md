@@ -13,8 +13,7 @@ certificate properly.
 
 ## Installation
 
-Download the latest version of this plugin's code from GitHub using
-[this link](https://github.com/ClassicPress-research/cp-ssl-fix/archive/refs/heads/master.zip)
+[Download the latest version of this plugin's code from GitHub](https://github.com/ClassicPress-research/cp-ssl-fix/archive/refs/heads/master.zip)
 and install it in your site's admin dashboard like any other plugin ("Plugins >
 Add New" in the dashboard menu, then click the button to "Upload Plugin").
 
