@@ -11,16 +11,51 @@ available, but many web servers (and other devices) are running an older
 version of a key piece of software that doesn't know how to use the new
 certificate properly.
 
+## Installation
+
+Download the latest version of this plugin's code from GitHub using
+[this link](https://github.com/ClassicPress-research/cp-ssl-fix/archive/refs/heads/master.zip)
+and install it in your site's admin dashboard like any other plugin ("Plugins >
+Add New" in the dashboard menu, then click the button to "Upload Plugin").
+
+Activate the plugin, then go to "Tools > CP SSL Fix" in the dashboard menu.
+
 ## Plugin functions
+
+There are three different modes this plugin can operate in, depending on the
+web server configuration.
+
+### Do nothing
 
 If your site reports that it is using a recent enough version of OpenSSL to
 perform external requests, then this plugin doesn't need to do anything.
+
+If the server is not suffering from this issue then the plugin will simply
+report that condition:
+
+<img src="https://forums.classicpress.net/uploads/default/original/2X/5/59aea0b849f9b24c1885ae7e603e8c18c2b49070.png">
+
+### Automatically use a corrected certificate bundle
 
 Otherwise, this plugin will attempt to tell your ClassicPress/WordPress
 installation not to use the expired certificate that causes this problem.  If
 the expired certificate is not present in your web server's system certificate
 bundle (part of the configuration set by your web host) then this is all that
-is needed.
+is needed to get things working again temporarily.
+
+If this is an issue that a ClassicPress/WordPress upgrade will be able to fix
+on your site, then this plugin can take care of it until the new version comes
+out:
+
+<img src="https://forums.classicpress.net/uploads/default/original/2X/0/06ac2f77e976e910191a0a07623f08b3e4b2d0c7.png">
+
+This plugin will also be able to help some sites to get the new version of
+ClassicPress/WordPress applied successfully when it comes out.
+
+When possible (depending on the server configuration), this is a much more
+secure alternative than disabling all certificate verification.
+
+### Provide the option to switch to insecure requests for a few minutes
 
 If the expired certificate is also present in your web server's system
 certificate bundle then this will not work.  Your web server will need to be
@@ -31,14 +66,10 @@ verification entirely for external requests. This is dangerous, so the plugin
 provides a button to enable this mode for 3 minutes to allow you to complete
 critical maintenance tasks like upgrades.
 
-## Installation
+<img src="https://forums.classicpress.net/uploads/default/original/2X/e/e64c2fa6a4964da9fb9ee356482c3d8c7903378f.png">
 
-Download the latest version of this plugin's code from GitHub using
-[this link](https://github.com/ClassicPress-research/cp-ssl-fix/archive/refs/heads/master.zip)
-and install it in your site's admin dashboard like any other plugin ("Plugins >
-Add New" in the dashboard menu, then click the button to "Upload Plugin").
-
-Activate the plugin, then go to "Tools > CP SSL Fix" in the dashboard menu.
+The real fix is to upgrade/reconfigure the webserver, but this can help get
+upgrades and other tasks unblocked in the meantime.
 
 ## More technical details
 
