@@ -26,11 +26,8 @@ web server configuration.
 
 ### Do nothing
 
-If your site reports that it is using a recent enough version of OpenSSL to
-perform external requests, then this plugin doesn't need to do anything.
-
-If the server is not suffering from this issue then the plugin will simply
-report that condition:
+If your site is able to perform external requests, then this plugin doesn't
+need to do anything and it will simply report that condition:
 
 <img src="https://forums.classicpress.net/uploads/default/original/2X/5/59aea0b849f9b24c1885ae7e603e8c18c2b49070.png">
 
@@ -48,7 +45,7 @@ out:
 
 <img src="https://forums.classicpress.net/uploads/default/original/2X/0/06ac2f77e976e910191a0a07623f08b3e4b2d0c7.png">
 
-This plugin will also be able to help some sites to get the new version of
+This plugin will also be able to help these sites to get the new version of
 ClassicPress/WordPress applied successfully when it comes out.
 
 When possible (depending on the server configuration), this is a much more
@@ -57,18 +54,18 @@ secure alternative than disabling all certificate verification.
 ### Provide the option to switch to insecure requests for a few minutes
 
 If the expired certificate is also present in your web server's system
-certificate bundle then this will not work.  Your web server will need to be
-upgraded (to a more recent version of PHP and/or the cURL extension for PHP) or
-reconfigured (to remove the expired certificate from your system's certificate
-store).  Until that is done, the only other option is to disable certificate
-verification entirely for external requests. This is dangerous, so the plugin
-provides a button to enable this mode for 3 minutes to allow you to complete
-critical maintenance tasks like upgrades.
+certificate bundle then the above method will not work.  Your web server will
+need to be upgraded (to a more recent version of PHP and/or the cURL extension
+for PHP) or reconfigured (to remove the expired certificate from your system's
+certificate store).  Until that is done, the only other option is to disable
+certificate verification entirely for external requests. This is dangerous, so
+the plugin provides a button to enable this mode for 3 minutes to allow you to
+complete critical maintenance tasks like upgrades.
 
 <img src="https://forums.classicpress.net/uploads/default/original/2X/e/e64c2fa6a4964da9fb9ee356482c3d8c7903378f.png">
 
-The real fix is to upgrade/reconfigure the webserver, but this can help get
-upgrades and other tasks unblocked in the meantime.
+Again, the real fix is to upgrade/reconfigure the webserver, but this can help
+get upgrades and other tasks unblocked in the meantime.
 
 ## More technical details
 
