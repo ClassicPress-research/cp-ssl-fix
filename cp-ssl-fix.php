@@ -212,8 +212,11 @@ function cp_ssl_fix_show_admin_page() {
 	// Check: Overridden CA
 	// It's possible for cp_ssl_fix_should_override_ca() to return true even
 	// though the unmodified request succeeds - apparently there are some
-	// (patched?) versions of OpenSSL 1.0.2 that don't have this problem.
-	if ( cp_ssl_fix_should_override_ca() && ! $ssl_checks['unmodified'] ) {
+	// (patched?) versions of OpenSSL 1.0.2 that don't have this problem.  It's
+	// also possible for the request to fail on sites that should have working
+	// SSL, if there is a network issue or something else preventing access to
+	// the test server.
+	if ( ! $ssl_checks['unmodified'] ) {
 		$ssl_checks['overridden'] = cp_ssl_fix_request( [ '_no_insecure' => true ] );
 		cp_ssl_fix_show_check(
 			$ssl_checks['overridden'],
