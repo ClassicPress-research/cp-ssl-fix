@@ -303,6 +303,14 @@ function cp_ssl_fix_show_admin_page() {
 		echo '</strong></p>';
 		echo '<p>';
 		esc_html_e( 'This plugin was not able to determine the status of your site.', 'cp-ssl-fix' );
+		echo '</p><p>';
+		// Not being able to talk to the CP API server is only likely to be a
+		// problem for CP sites.
+		if ( function_exists( 'classicpress_version' ) ) {
+			esc_html_e( 'You may need to contact your web host and ask them to enable outgoing connections to <code>api-v1.classicpress.net</code>.', 'cp-ssl-fix' );
+		} else {
+			esc_html_e( 'If everything on your site is working correctly then this is probably not a big problem.', 'cp-ssl-fix' );
+		}
 		echo '</p>';
 	}
 
